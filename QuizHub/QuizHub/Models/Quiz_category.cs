@@ -7,10 +7,10 @@ namespace QuizHub.Models
 {
     public class Quiz_category
     {
-
         public int qc_id { get; set; }
 
         public string qc_type { get; set; }
-        
+
+        public ICollection<Quiz_question> quiz_que { get; set; }
     }
 }

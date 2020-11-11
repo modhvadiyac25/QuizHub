@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\VS Projects\\Repos\\QuizHub\\QuizHub\\QuizHub\\QuizHub.csproj": {}
+    "D:\\DDIT\\sem 5\\WDDN\\project\\QuizHub\\QuizHub\\QuizHub.csproj": {}
   },
   "projects": {
-    "F:\\VS Projects\\Repos\\QuizHub\\QuizHub\\QuizHub\\QuizHub.csproj": {
+    "D:\\DDIT\\sem 5\\WDDN\\project\\QuizHub\\QuizHub\\QuizHub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\VS Projects\\Repos\\QuizHub\\QuizHub\\QuizHub\\QuizHub.csproj",
+        "projectUniqueName": "D:\\DDIT\\sem 5\\WDDN\\project\\QuizHub\\QuizHub\\QuizHub.csproj",
         "projectName": "QuizHub",
-        "projectPath": "F:\\VS Projects\\Repos\\QuizHub\\QuizHub\\QuizHub\\QuizHub.csproj",
-        "packagesPath": "C:\\Users\\jeett\\.nuget\\packages\\",
-        "outputPath": "F:\\VS Projects\\Repos\\QuizHub\\QuizHub\\QuizHub\\obj\\",
+        "projectPath": "D:\\DDIT\\sem 5\\WDDN\\project\\QuizHub\\QuizHub\\QuizHub.csproj",
+        "packagesPath": "C:\\Users\\modhv\\.nuget\\packages\\",
+        "outputPath": "D:\\DDIT\\sem 5\\WDDN\\project\\QuizHub\\QuizHub\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jeett\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\modhv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -37,6 +37,48 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite.Core": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
