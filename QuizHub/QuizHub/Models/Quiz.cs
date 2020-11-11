@@ -7,5 +7,6 @@ namespace QuizHub.Models
 {
     public class Quiz
     {
+
     }
 }
