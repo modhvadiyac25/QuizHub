@@ -7,6 +7,6 @@ namespace QuizHub.Models
 {
     public class Quiz //This is the Quiz Model class 
     {
-
+            string name = "hey chetan";
     }
 }
