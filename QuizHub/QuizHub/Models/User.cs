@@ -10,7 +10,6 @@ namespace QuizHub.Models
 {
     public class User
     {
-        
         public int u_id { get; set; }
 
         [Required]
@@ -33,6 +32,5 @@ namespace QuizHub.Models
         public string password { get; set; }
 
         public ICollection<User_progress> user_Progresses { get; set; }
-
     }
 }
