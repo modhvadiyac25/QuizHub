@@ -10,8 +10,7 @@ namespace QuizHub.Models
 {
     public class User
     {
-        string name = "i am chatn modhvadiya";
-        [Required]
+        
         public int u_id { get; set; }
 
         [Required]
