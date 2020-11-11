@@ -8,6 +8,6 @@ namespace QuizHub.Models
     interface IUser_progressRepository
     {
         IEnumerable<User_progress> GetUser_Progresses();
-        User_progress AddProgress(User_progress);
+        User_progress AddProgress(User_progress user_Progress);
     }
 }
