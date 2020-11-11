@@ -14,5 +14,9 @@ namespace QuizHub.Models
         public int wans { get; set; }
 
         public DateTime date { get { return DateTime.Now; } }
+
+        public int u_id { get; set; }
+
+        public User user { get; set; }
     }
 }

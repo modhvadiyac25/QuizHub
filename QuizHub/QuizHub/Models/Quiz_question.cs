@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-
 namespace QuizHub.Models
 {
     public class Quiz_question
@@ -20,16 +19,14 @@ namespace QuizHub.Models
 
         public string qq_ans { get; set; }
 
-        public Quiz_category qc_id { get; set; }
-        public Quiz_category quiz_Category { get; set; }
+        public int qc_id { get; set; }
+        public Quiz_category quiz_cat { get; set; }
 
     }
 }
 
 
 /*quiz_questions
-
-
   [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
  */
 
