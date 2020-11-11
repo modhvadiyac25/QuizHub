@@ -13,6 +13,9 @@ namespace QuizHub.Models
 
         }
 
-        public DbSet<> 
+        public DbSet<User> users { get; set; }
+        public DbSet<User_progress> user_Progresses { get; set; }
+        public DbSet<Quiz_category> quiz_Categories { get; set; }
+        public DbSet<Quiz_question> quiz_Questions { get; set; }
     }
 }
