@@ -20,7 +20,7 @@ namespace QuizHub.Models
         public string qq_ans { get; set; }
 
         public int qc_id { get; set; }
-        public Quiz_category quiz_cat { get; set; }
+        public Quiz_category quiz_cat{ get; set; }
 
     }
 }

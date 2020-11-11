@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace QuizHub.Models
 {
-    public class Quiz //This is the Quiz Model class 
+    public class Quiz 
     {
-            string name = "hey chetan";
+         
     }
 }
