@@ -62,7 +62,7 @@ D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\Microsoft.Ent
 D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-<<<<<<< HEAD
+
 D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
 D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
 D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
@@ -108,7 +108,8 @@ D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\Microsoft.Ext
 D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\obj\Debug\netcoreapp3.1\QuizHub.csproj.CoreCompileInputs.cache
 D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\obj\Debug\netcoreapp3.1\QuizHub.MvcApplicationPartsAssemblyInfo.cache
-=======
+
+
 F:\VS Projects\Repos\QuizHub\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\appsettings.json
 F:\VS Projects\Repos\QuizHub\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 F:\VS Projects\Repos\QuizHub\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\appsettings.Development.json
@@ -198,4 +199,3 @@ F:\VS Projects\Repos\QuizHub\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\runtimes\wi
 F:\VS Projects\Repos\QuizHub\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 F:\VS Projects\Repos\QuizHub\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 F:\VS Projects\Repos\QuizHub\QuizHub\QuizHub\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.Design.dll
->>>>>>> 840cceb32b1de3e33361d32497784f97b8a5ea48

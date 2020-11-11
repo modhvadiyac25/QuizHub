@@ -1,14 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
+   
+   
   "dgSpecHash": "P1W3FhkkTPikDWwk+DXWCPHUyKYxpvCNNqDlcUBBGW9+jz1O/V+D9A3kUxBkYIA+cEyI11Uo5N7Sz+kyaYE2/A==",
-=======
+    
   "dgSpecHash": "pIoXM8g/ubAU62n1zWAd3pBQrPELbFChs5FxiKRL6U2VcepHcOQLkXZHD9rbgQgK5GdV0oUKnAIcOnv6lzaC9w==",
->>>>>>> 840cceb32b1de3e33361d32497784f97b8a5ea48
+    
   "success": true,
   "projectFilePath": "F:\\VS Projects\\Repos\\QuizHub\\QuizHub\\QuizHub\\QuizHub.csproj",
   "expectedPackageFiles": [
-<<<<<<< HEAD
+   
     "C:\\Users\\modhv\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\modhv\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.0\\microsoft.aspnetcore.cryptography.internal.5.0.0.nupkg.sha512",
     "C:\\Users\\modhv\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.0\\microsoft.aspnetcore.cryptography.keyderivation.5.0.0.nupkg.sha512",
@@ -157,7 +158,13 @@
     "C:\\Users\\modhv\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\modhv\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\modhv\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
-=======
+    
+    
+  "dgSpecHash": "pIoXM8g/ubAU62n1zWAd3pBQrPELbFChs5FxiKRL6U2VcepHcOQLkXZHD9rbgQgK5GdV0oUKnAIcOnv6lzaC9w==",
+  "success": true,
+  "projectFilePath": "F:\\VS Projects\\Repos\\QuizHub\\QuizHub\\QuizHub\\QuizHub.csproj",
+  "expectedPackageFiles": [
+    
     "C:\\Users\\jeett\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\jeett\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\jeett\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -308,7 +315,10 @@
     "C:\\Users\\jeett\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\jeett\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\jeett\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
->>>>>>> 840cceb32b1de3e33361d32497784f97b8a5ea48
+   
+    
+    
+    
   ],
   "logs": []
 }
