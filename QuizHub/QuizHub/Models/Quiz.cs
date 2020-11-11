@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace QuizHub.Models
 {
-    public class Quiz
+    public class Quiz //This is the Quiz Model class 
     {
     }
 }
