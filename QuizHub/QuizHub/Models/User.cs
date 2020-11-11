@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace QuizHub.Models
 {
     public class User
-    {
+    {   
+        [Key]
         public int u_id { get; set; }
 
         [Required]

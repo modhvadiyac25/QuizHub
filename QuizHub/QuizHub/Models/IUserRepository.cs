@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace QuizHub.Models
 {
-    interface IUserRepository
+    public interface IUserRepository
     {
         User GetUser(int Id);
         IEnumerable<User> GetAllUsers();

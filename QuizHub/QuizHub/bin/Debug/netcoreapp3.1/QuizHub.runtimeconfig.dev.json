@@ -2,7 +2,7 @@
   "runtimeOptions": {
     "additionalProbingPaths": [
       "C:\\Users\\modhv\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\jeett\\.nuget\\packages"
+      "C:\\Users\\modhv\\.nuget\\packages"
     ]
   }
 }

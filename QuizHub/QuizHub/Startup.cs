@@ -30,6 +30,7 @@ namespace QuizHub
         services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("QuizHubDbConnection")));
 
             services.AddControllersWithViews();
+            services.AddScoped<IUserRepository,SQLUserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace QuizHub.Models
 {
-    interface IQuiz_categoryRepository
+    public interface IQuiz_categoryRepository
     {
         Quiz_category GetType(int Id);
-        Quiz_category Add(Quiz_category user);
+        Quiz_category Add(Quiz_category quiz_Category);
         Quiz_category Delete(int Id);
     }
 }
