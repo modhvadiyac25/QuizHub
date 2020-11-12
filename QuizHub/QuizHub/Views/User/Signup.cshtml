@@ -4,6 +4,8 @@
     ViewData["Title"] = "Create";
 }
 
+
+
 <h1>Sign up</h1>
 
 <h4>User</h4>
@@ -52,6 +54,19 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert">
+        @ViewData["succes"]
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+        @ViewData["fail"]
+    </div>
+}
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

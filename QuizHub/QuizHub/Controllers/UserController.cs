@@ -33,6 +33,11 @@ namespace QuizHub.Controllers
             if (ModelState.IsValid)
             {
                 _userRepo.Add(user);
+                ViewData["succes"] = "registration succesfully !!";
+            }
+            else
+            {
+                ViewData["fail"] = "Please enter the valide data !!";
             }
             return View();
         }
@@ -42,7 +47,5 @@ namespace QuizHub.Controllers
         {
             return View();
         }
-
-       
     }
 }
