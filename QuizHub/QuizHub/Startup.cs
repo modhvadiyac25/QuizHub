@@ -12,6 +12,7 @@ using QuizHub.Models;
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace QuizHub
 {
@@ -28,8 +29,9 @@ namespace QuizHub
         public void ConfigureServices(IServiceCollection services)
         {
         services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("QuizHubDbConnection")));
-
+            
             services.AddControllersWithViews();
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             services.AddScoped<IUserRepository,SQLUserRepository>();
         }
 
@@ -48,7 +50,7 @@ namespace QuizHub
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();

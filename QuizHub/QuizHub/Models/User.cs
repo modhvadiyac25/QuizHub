@@ -19,17 +19,17 @@ namespace QuizHub.Models
         [Required]
         public string lname { get; set; }
 
-        [Required]
-        public string gender { get; set; }
 
         [Required,DataType(DataType.EmailAddress)]
         public string email { get; set; }
 
         [Required]
+        [MaxLength(10,ErrorMessage ="Mobile no must be 10 digits !!")]
         public string mno { get; set; }
 
-        [Required]
+        
         [MinLength(8,ErrorMessage ="Password must be greater then 8 characters !!")]
+        [Required, DataType(DataType.Password)]
         public string password { get; set; }
 
         public ICollection<User_progress> user_Progresses { get; set; }

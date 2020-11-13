@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using QuizHub.Models;
+using QuizHub.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,42 +13,126 @@ namespace QuizHub.Controllers
     public class UserController : Controller
     {
         private readonly IUserRepository _userRepo;
+        private readonly UserManager<IdentityUser> userManager;
+        private readonly SignInManager<IdentityUser> signInManager;
 
-        public UserController(IUserRepository userRepo)
+        public UserController(IUserRepository userRepo,UserManager<IdentityUser> userManager,SignInManager<IdentityUser> signInManager)
         {
             _userRepo = userRepo;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
         }
-
+/*
         public IActionResult Index()
         {
             return View();
         }
+*/
+/*
+        [AcceptVerbs("Get","Post")]
+        [AllowAnonymous]
+        public async Task<IActionResult> IsEmainInUse(string email)
+        {
+            var user = await userManager.FindByEmailAsync(email);
+
+            if (user == null)
+            {
+                return Json(true);
+            }
+            else
+            {
+                return Json($"Email {email} is already in use");
+            }
+        }
+        */
+        [HttpPost]
+        public async Task<IActionResult> logout()
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToAction("index","Home");
+        }
 
         [HttpGet]
-        public ViewResult Signup()
+        public IActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        public ViewResult Signup(User user)
+        public async Task<IActionResult> Login(LoginViewModel model,string returnUrl)
         {
             if (ModelState.IsValid)
             {
-                _userRepo.Add(user);
-                ViewData["succes"] = "registration succesfully !!";
+                var result = await signInManager.PasswordSignInAsync(model.Email, model.Password,model.RememberMe, false);
+               
+                if (result.Succeeded )
+                {
+                    if (!string.IsNullOrEmpty(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction("index", "Home");
+                    }
+
+                }
+                
+
+                ModelState.AddModelError(string.Empty,"Invalide login !!");
+                
             }
-            else
-            {
-                ViewData["fail"] = "Please enter the valide data !!";
-            }
+            return View(model);
+        }
+
+
+
+
+
+
+
+        [HttpGet]
+        public IActionResult Register()
+        {
             return View();
         }
 
-        [HttpGet]
-        public ViewResult login()
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var userOfModel = new User
+                {
+                    fname = model.fname,
+                    lname = model.lname,
+                    email=model.email,
+                    mno=model.mno,
+                    password=model.password
+
+                };
+                var user = new IdentityUser
+                {
+                    UserName = model.email,
+                    Email = model.email
+                };
+
+                var result = await userManager.CreateAsync(user,model.password);
+                _userRepo.Add(userOfModel);
+
+                if (result.Succeeded)
+                {
+                    await signInManager.SignInAsync(user,isPersistent:false);
+                    return RedirectToAction("index","Home");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty,error.Description);
+                }
+
+            }
+            return View(model);
         }
     }
 }

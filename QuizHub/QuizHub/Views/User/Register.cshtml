@@ -1,18 +1,16 @@
-﻿@model QuizHub.Models.User
+﻿@model QuizHub.ViewModels.RegisterViewModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Register";
 }
 
-
-
-<h1>Sign up</h1>
+<h1>Register</h1>
 
 <h4>User</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Signup">
+        <form asp-action="Register" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="fname" class="control-label"></label>
@@ -23,11 +21,6 @@
                 <label asp-for="lname" class="control-label"></label>
                 <input asp-for="lname" class="form-control" />
                 <span asp-validation-for="lname" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="gender" class="control-label"></label>
-                <input asp-for="gender" class="form-control" />
-                <span asp-validation-for="gender" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="email" class="control-label"></label>
@@ -45,6 +38,11 @@
                 <span asp-validation-for="password" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="confirm_password" class="control-label"></label>
+                <input asp-for="confirm_password" class="form-control" />
+                <span asp-validation-for="confirm_password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -54,19 +52,6 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
-@if (!ViewData.ModelState.IsValid)
-{
-    <div class="alert">
-        @ViewData["succes"]
-    </div>
-}
-else
-{
-    <div class="alert alert-danger">
-        @ViewData["fail"]
-    </div>
-}
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
