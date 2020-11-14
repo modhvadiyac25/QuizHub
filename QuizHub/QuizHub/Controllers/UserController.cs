@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace QuizHub.Controllers
 {
+   
     public class UserController : Controller
     {
         private readonly IUserRepository _userRepo;
@@ -22,29 +23,40 @@ namespace QuizHub.Controllers
             this.userManager = userManager;
             this.signInManager = signInManager;
         }
-/*
-        public IActionResult Index()
+
+        [Authorize(Roles = "User")]
+        [HttpGet]
+        public IActionResult PlayQuiz()
         {
             return View();
         }
-*/
-/*
-        [AcceptVerbs("Get","Post")]
-        [AllowAnonymous]
-        public async Task<IActionResult> IsEmainInUse(string email)
-        {
-            var user = await userManager.FindByEmailAsync(email);
-
-            if (user == null)
-            {
-                return Json(true);
-            }
-            else
-            {
-                return Json($"Email {email} is already in use");
-            }
-        }
+        
+        /*
+                public IActionResult Index()
+                {
+                    return View();
+                }
         */
+        /*
+                [AcceptVerbs("Get","Post")]
+                [AllowAnonymous]
+                public async Task<IActionResult> IsEmainInUse(string email)
+                {
+                    var user = await userManager.FindByEmailAsync(email);
+
+                    if (user == null)
+                    {
+                        return Json(true);
+                    }
+                    else
+                    {
+                        return Json($"Email {email} is already in use");
+                    }
+                }
+                */
+
+
+
         [HttpPost]
         public async Task<IActionResult> logout()
         {
@@ -85,12 +97,6 @@ namespace QuizHub.Controllers
             return View(model);
         }
 
-
-
-
-
-
-
         [HttpGet]
         public IActionResult Register()
         {
@@ -122,6 +128,12 @@ namespace QuizHub.Controllers
 
                 if (result.Succeeded)
                 {
+
+                    if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                        return RedirectToAction("ListUsers", "Administration");
+                    }
+
                     await signInManager.SignInAsync(user,isPersistent:false);
                     return RedirectToAction("index","Home");
                 }

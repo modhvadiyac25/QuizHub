@@ -30,8 +30,10 @@ namespace QuizHub
         {
         services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("QuizHubDbConnection")));
             
+
             services.AddControllersWithViews();
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.ConfigureApplicationCookie(options => { options.AccessDeniedPath = new PathString("/Administration/AccessDenied"); });
             services.AddScoped<IUserRepository,SQLUserRepository>();
         }
 
