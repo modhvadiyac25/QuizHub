@@ -23,18 +23,121 @@ namespace QuizHub.Controllers
             this.signInManager = signInManager;
         }
 
+        [HttpPost]
+        public async Task<IActionResult> DeleteRole(string Id)
+        {
+            var role = await roleManager.FindByIdAsync(Id);
+
+            if (role == null)
+            {
+                ViewBag.ErrorMessage = $"Role with id = {Id} is not found";
+                return View("NotFound");
+            }
+            else
+            {
+                var result = await roleManager.DeleteAsync(role);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("ListRoles");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View("ListRoles");
+            }
+
+           
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(string Id)
+        {
+            var user = await userManager.FindByIdAsync(Id);
+
+            if(user == null)
+            {
+                ViewBag.ErrorMessage = $"User with id = {Id} is not found";
+                return View("NotFound");
+            }
+            else
+            {
+                var result = await userManager.DeleteAsync(user);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("ListUsers");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View("ListUsers");
+            }
+
+            
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditUser(EditeUserViewModel model)
+        {
+            var user = await userManager.FindByIdAsync(model.Id);
+
+            if(user == null)
+            {
+                ViewBag.ErrorMessage = $"User with id = {model.Id} is not found ";
+                return View("NotFound");
+            }
+            user.UserName = model.UserName;
+            user.Email = model.Email;
+
+            var result = await userManager.UpdateAsync(user);
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction("ListUsers");
+            }
+
+            foreach(var error in result.Errors)
+            {
+                ModelState.AddModelError("",error.Description);
+            }
+
+            return View(model);
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> EditUser(string id)
+        {
+           
+            var user = await userManager.FindByIdAsync(id);
+            ViewBag.userId = "userid";
+
+            if(user == null)
+            {
+                ViewBag.ErrorMessage = $"User with id = {id} is not found";
+                return View("NotFound");
+            }
+
+            var model = new EditeUserViewModel
+            {
+                Id = user.Id,
+                UserName = user.UserName,
+                Email = user.Email
+            };
+
+            return View(model);
+        }
+
         [HttpGet]
         public IActionResult ListUsers()
         {
             var users = userManager.Users;
             return View(users);
-        }
-
-        [HttpGet]
-        [AllowAnonymous]
-        public IActionResult AccessDenied()
-        {
-            return View();
         }
 
         [HttpPost]
@@ -216,6 +319,13 @@ namespace QuizHub.Controllers
             }
 
             return View(model); 
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
 
     }

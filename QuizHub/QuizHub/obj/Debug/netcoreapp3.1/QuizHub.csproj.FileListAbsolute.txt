@@ -288,3 +288,4 @@ D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\obj\Debug\netcoreapp3.1\QuizHub.dll
 D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\obj\Debug\netcoreapp3.1\QuizHub.pdb
 D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\obj\Debug\netcoreapp3.1\QuizHub.genruntimeconfig.cache
 D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\obj\Debug\netcoreapp3.1\QuizHub.csprojAssemblyReference.cache
+D:\DDIT\sem 5\WDDN\project\QuizHub\QuizHub\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditUser.cshtml.g.cs

@@ -21,5 +21,6 @@ namespace QuizHub.Models
         public DbSet<Quiz_question> quiz_Questions { get; set; }
         public DbSet<QuizHub.ViewModels.LoginViewModel> LoginViewModel { get; set; }
         public DbSet<QuizHub.ViewModels.CreateRoleViewModel> CreateRoleViewModel { get; set; }
+        public DbSet<QuizHub.ViewModels.EditeUserViewModel> EditeUserViewModel { get; set; }
     }
 }
