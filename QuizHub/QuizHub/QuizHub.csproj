@@ -9,7 +9,6 @@
     <Compile Remove="Controllers\Class1.cs" />
     <Compile Remove="Controllers\Class2.cs" />
     <Compile Remove="Controllers\QuizCategory.cs" />
-    <Compile Remove="ViewModels\Class.cs" />
   </ItemGroup>
 
   <ItemGroup>

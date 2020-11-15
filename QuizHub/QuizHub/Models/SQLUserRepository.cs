@@ -22,9 +22,9 @@ namespace QuizHub.Models
             throw new NotImplementedException();
         }
 
-        public User Delete(int Id)
+        public User Delete(string email)
         {
-            User user = context.users.Find(Id);
+            User user = context.users.Find(email);
             if (user != null)
             {
                 context.users.Remove(user);

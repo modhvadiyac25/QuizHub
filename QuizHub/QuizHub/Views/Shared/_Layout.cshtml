@@ -54,7 +54,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                      
+
                         @if (SignInManager.IsSignedIn(User) && User.IsInRole("User"))
                         {
                             <li class="nav-item">
@@ -77,6 +77,9 @@
                                     <a class="dropdown-item" asp-controller="Administration"
                                        asp-action="ListRoles">Roles</a>
                                 </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="QuizCategory" asp-action="CreateCategory">Add Categoty</a>
                             </li>
                         }
                     </ul>

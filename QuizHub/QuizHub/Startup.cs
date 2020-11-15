@@ -35,6 +35,9 @@ namespace QuizHub
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             services.ConfigureApplicationCookie(options => { options.AccessDeniedPath = new PathString("/Administration/AccessDenied"); });
             services.AddScoped<IUserRepository,SQLUserRepository>();
+            services.AddScoped<IUser_progressRepository, SQLUser_progressRepository>();
+            services.AddScoped<IQuiz_questionRepository, SQLQuiz_questionRepository>();
+            services.AddScoped<IQuiz_categoryRepository, SQLQuiz_categoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

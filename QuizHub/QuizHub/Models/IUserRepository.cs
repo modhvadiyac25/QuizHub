@@ -11,7 +11,7 @@ namespace QuizHub.Models
         IEnumerable<User> GetAllUsers();
         User Add(User user);
         User Update(User UserChanges);
-        User Delete(int Id);
+        User Delete(string email);
 
     }
 }

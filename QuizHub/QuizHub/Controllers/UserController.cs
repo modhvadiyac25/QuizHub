@@ -55,8 +55,6 @@ namespace QuizHub.Controllers
                 }
                 */
 
-
-
         [HttpPost]
         public async Task<IActionResult> logout()
         {

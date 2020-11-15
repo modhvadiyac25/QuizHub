@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using QuizHub.Models;
 using QuizHub.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,14 @@ namespace QuizHub.Controllers
     [Authorize(Roles="Admin")]
     public class AdministrationController : Controller
     {
+        private readonly IUserRepository _userRepo;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
 
-        public AdministrationController(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AdministrationController(IUserRepository userRepo, RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
+            this._userRepo = userRepo;
             this.roleManager = roleManager;
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -65,6 +68,8 @@ namespace QuizHub.Controllers
             else
             {
                 var result = await userManager.DeleteAsync(user);
+
+             //   var user_result = _userRepo.Delete(Convert.ToString(user.Email));
 
                 if (result.Succeeded)
                 {
@@ -155,7 +160,7 @@ namespace QuizHub.Controllers
             {
                 var user = await userManager.FindByIdAsync(model[i].UserId);
 
-                IdentityResult result = null;
+                IdentityResult result= null;
 
                 if (model[i].isSelected && !(await userManager.IsInRoleAsync(user,role.Name)))
                 {
