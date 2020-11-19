@@ -1,0 +1,61 @@
+﻿@model QuizHub.Models.Quiz_question;
+
+@{
+    ViewData["Title"] = "ShowQuestion";
+}
+
+<h1>Quiz Questions </h1>
+
+@foreach (var obj in ViewBag.linqinstance)
+{
+<div class="card mb-3">
+    <div class="card-header">
+        @obj.qq_question
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"></h5>
+        <input id="op1" type="radio" name="@obj.qq_id" class="rb" value="@obj.qq_opta" />&nbsp;@obj.qq_opta<br>
+        <input id="op2" type="radio" name="@obj.qq_id" class="rb" value="@obj.qq_optb" />&nbsp;@obj.qq_optb<br>
+        <input id="op3" type="radio" name="@obj.qq_id" class="rb" value="@obj.qq_optc" />&nbsp;@obj.qq_optc<br>
+        <input id="op4" type="radio" name="@obj.qq_id" class="rb" value="@obj.qq_optd" />&nbsp;@obj.qq_optd<br>
+        
+    </div>
+    <div class="card-footer">
+        <span class="lbldis" style="display:none;color:forestgreen;font:bold">Correct answer is : </span><label class="rb" name="@obj.qq_id" style="display:none;color:forestgreen;font:bold">@obj.qq_ans</label>
+    </div>
+    </div>
+    }
+
+<div><label style="font:bold; font-size:20px; " id="lbl"></label></div>
+<button id="btn1" type="button" value="submit" class="btn btn-success" onclick="display();">Submit</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="http://code.responsivevoice.org/responsivevoice.js">
+
+</script>
+<script>
+
+    $(document).ready(function () {
+        $("#btn1").click(function(){
+            $('.rb').show();
+            $('.lbldis').show();
+        });
+        
+    });
+    function display() {
+       var count=1
+        document.getElementById('lbl').innerHTML = "";
+        var result = document.getElementsByTagName('input');
+
+        for (i = 0; i < result.length; i++) {
+            
+            if (result[i].type == "radio") {
+               
+                if (result[i].checked) {
+
+                    document.getElementById('lbl').innerHTML += "Q " + count++ + ") " + "your selected answer is :" + result[i].value + "</br>";
+                }
+            }
+        }
+    }
+</script>

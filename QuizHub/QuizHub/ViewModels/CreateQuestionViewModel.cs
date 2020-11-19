@@ -1,16 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace QuizHub.Models
+namespace QuizHub.ViewModels
 {
-    public class Quiz_question
-    {   
+    public class CreateQuestionViewModel
+    {
+        public CreateQuestionViewModel()
+        {
+            categories = new List<string>();
+        }
+
         [Key]
         public int qq_id { get; set; }
 
+        public string qq_cat { get; set; }
+
+        [NotMapped]
+        public List<string> categories { get; set; }
+        
         public string qq_question { get; set; }
 
         public string qq_opta { get; set; }
@@ -23,15 +34,6 @@ namespace QuizHub.Models
 
         public string qq_ans { get; set; }
 
-        public int qc_Id { get; set; }
-        public Quiz_category quiz_cat{ get; set; }
-
+        
     }
 }
-
-
-/*quiz_questions
-  [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
- */
-
-

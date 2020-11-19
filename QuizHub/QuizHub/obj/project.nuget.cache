@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IWKjprPmscdhu2GCBs0U1lMUPl2U8vpt4hbR7fSk/NILAlhUnw20y1AbN9xJAT1nW97141IWFFtMqkqQ3nM+6w==",
+  "dgSpecHash": "Psw5Ui3A7/fACeio8C82thLPcULNmJsIRv2zOnZCVcvr+YmNb5lFCcpv+blAsGhvqkm1VlYEsUkKh6zU8ikp/g==",
   "success": true,
-  "projectFilePath": "D:\\DDIT\\sem 5\\WDDN\\project\\QuizHub\\QuizHub\\QuizHub.csproj",
+  "projectFilePath": "D:\\DDIT\\sem 5\\WDDN\\Project2\\QuizHub\\QuizHub\\QuizHub\\QuizHub.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\modhv\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\modhv\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

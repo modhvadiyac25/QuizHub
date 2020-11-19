@@ -24,12 +24,6 @@ namespace QuizHub.Controllers
             this.signInManager = signInManager;
         }
 
-        [Authorize(Roles = "User")]
-        [HttpGet]
-        public IActionResult PlayQuiz()
-        {
-            return View();
-        }
         
         /*
                 public IActionResult Index()

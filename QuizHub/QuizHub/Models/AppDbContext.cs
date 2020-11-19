@@ -19,9 +19,9 @@ namespace QuizHub.Models
         public DbSet<User_progress> user_Progresses { get; set; }
         public DbSet<Quiz_category> quiz_Categories { get; set; }
         public DbSet<Quiz_question> quiz_Questions { get; set; }
-        public DbSet<QuizHub.ViewModels.LoginViewModel> LoginViewModel { get; set; }
-        public DbSet<QuizHub.ViewModels.CreateRoleViewModel> CreateRoleViewModel { get; set; }
-        public DbSet<QuizHub.ViewModels.EditeUserViewModel> EditeUserViewModel { get; set; }
-        public DbSet<QuizHub.ViewModels.CreateCategoryViewModel> CreateCategoryViewModel { get; set; }
+        //public DbSet<QuizHub.ViewModels.LoginViewModel> LoginViewModel { get; set; }
+        //public DbSet<QuizHub.ViewModels.CreateRoleViewModel> CreateRoleViewModel { get; set; }
+        //public DbSet<QuizHub.ViewModels.EditeUserViewModel> EditeUserViewModel { get; set; }
+        //public DbSet<QuizHub.ViewModels.CreateCategoryViewModel> CreateCategoryViewModel { get; set; }
     }
 }

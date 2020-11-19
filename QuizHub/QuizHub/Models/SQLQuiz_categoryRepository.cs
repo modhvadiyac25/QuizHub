@@ -25,7 +25,7 @@ namespace QuizHub.Models
         public Quiz_category Delete(int Id)
         {
             Quiz_category quiz_Category = context.quiz_Categories.Find(Id);
-            if(quiz_Category != null)
+            if (quiz_Category != null)
             {
                 context.quiz_Categories.Remove(quiz_Category);
                 context.SaveChanges();
@@ -38,6 +38,11 @@ namespace QuizHub.Models
         {
             return context.quiz_Categories.Find(Id);
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<Quiz_category> GetAllCategory()
+        {
+            return context.quiz_Categories;
         }
     }
 }

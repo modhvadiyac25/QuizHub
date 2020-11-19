@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace QuizHub.Controllers
 {
-    [Authorize(Roles="Admin")]
+   // [Authorize(Roles="Admin")]
     public class AdministrationController : Controller
     {
         private readonly IUserRepository _userRepo;
@@ -313,7 +313,7 @@ namespace QuizHub.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("index","Home");
+                    return RedirectToAction("ListRoles", "Administration");
                 }
 
                 foreach (IdentityError error in result.Errors )
