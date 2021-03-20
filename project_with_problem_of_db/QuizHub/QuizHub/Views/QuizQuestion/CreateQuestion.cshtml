@@ -1,0 +1,68 @@
+﻿@model QuizHub.ViewModels.CreateQuestionViewModel
+
+
+@{
+    ViewData["Title"] = "CreateQuestion";
+}
+
+<h1>CreateQuestion</h1>
+
+<h4>CreateQuestionViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateQuestion">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="qc_Id" class="control-label"></label>
+               @try
+               {
+                   <select  asp-for="qc_Id" asp-items="@(new SelectList(Model.categories))" style="height:auto" class="dropdown form-control"></select>
+               }
+               catch (NullReferenceException e)
+               {
+
+             }
+               <span asp-validation-for="qc_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="qq_question" class="control-label"></label>
+                <input asp-for="qq_question" class="form-control" />
+                <span asp-validation-for="qq_question" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="qq_opta" class="control-label"></label>
+                <input asp-for="qq_opta" class="form-control" />
+                <span asp-validation-for="qq_opta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="qq_optb" class="control-label"></label>
+                <input asp-for="qq_optb" class="form-control" />
+                <span asp-validation-for="qq_optb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="qq_optc" class="control-label"></label>
+                <input asp-for="qq_optc" class="form-control" />
+                <span asp-validation-for="qq_optc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="qq_optd" class="control-label"></label>
+                <input asp-for="qq_optd" class="form-control" />
+                <span asp-validation-for="qq_optd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="qq_ans" class="control-label"></label>
+                <input asp-for="qq_ans" class="form-control" />
+                <span asp-validation-for="qq_ans" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

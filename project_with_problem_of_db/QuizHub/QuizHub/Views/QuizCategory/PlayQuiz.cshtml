@@ -1,0 +1,44 @@
+﻿@model QuizHub.ViewModels.SelectCategoryViewModel;
+@{
+ViewData["Title"] = "PlayQuiz";
+}
+
+<h1>PlayQuiz</h1>
+
+<form mothod="post" asp-action="PlayQuiz" asp-controller="QuizCategory">
+
+    <h1>Binding data into Dropdown list</h1>
+    @try
+    {
+        <hr />
+            <select class="btn btn-primary dropdown-toggle" asp-for="qc_Type" asp-items="@(new SelectList(Model.categories))"></select>
+   
+    }
+    catch (NullReferenceException e)
+    {
+
+    }
+
+    @*<div class="card">
+            <div class="card-header">
+                <h3>Users in this role</h3>
+            </div>
+            <div class="card-body">
+                @if (Model.categories.Any())
+                {
+                    foreach (var cat in Model.categories)
+                    {
+                        <h5 class="card-title">@cat</h5>
+                    }
+                }
+                else
+                {
+                    <h5 class="card-title">None at the moment</h5>
+                }
+            </div>
+        </div>*@
+
+    <button type="submit" class="btn btn-primary">Display Quiz</button>
+</form>
+
+
